@@ -1,2 +1,2 @@
-# BJ_ISFP_Android
-I SELL FOR PEOPLE
+# BJ_ISFP_Android (중고거래 앱)
+I SELL FOR PEOPLE 
