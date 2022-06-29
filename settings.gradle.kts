@@ -7,6 +7,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "BJ_ISFP_Android"
-include ':presentation'
-include ':data'
-include ':domain'
+include (":presentation")
+include (":domain")
+include (":data")
