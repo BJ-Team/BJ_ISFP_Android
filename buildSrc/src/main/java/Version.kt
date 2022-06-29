@@ -1,8 +1,16 @@
 object Version {
-    const val NAV = "2.4.1"
-    const val ANI_NAV = "0.24.5-alpha"
-    const val LANDSCAPIST = "1.4.7"
-
-    const val COMPOSE = "1.2.0-alpha03"
-    const val ACTIVITY_COMPOSE = "1.4.0"
+    const val coreKtx = "1.7.0"
+    const val appcompat = "1.4.0"
+    const val androidKtx = "1.4.0"
+    const val fragmentKtx = "1.4.0"
+    const val nav = "2.4.1"
+    const val aniNav = "0.24.5-alpha"
+    const val jetpackCompose = "1.1.0"
+    const val activityCompose = "1.4.0"
+    const val lifecycle = "2.4.1"
+    const val espresso = "3.4.0"
+    const val gradle = "7.0.4"
+    const val kotlin = "1.6.10"
+    const val hilt = "2.38.1"
+    const val service = "4.3.10"
 }
