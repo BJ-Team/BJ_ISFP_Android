@@ -10,10 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BJ_ISFP_Android" >
         <activity
-            android:name=".MainActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".ui.theme.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.BJ_ISFP_Android.NoActionBar" >
