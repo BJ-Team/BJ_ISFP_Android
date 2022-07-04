@@ -1,5 +1,6 @@
 object Version {
     const val coreKtx = "1.7.0"
+    const val material = "1.1.0"
     const val appcompat = "1.4.0"
     const val androidKtx = "1.4.0"
     const val fragmentKtx = "1.4.0"
@@ -13,4 +14,5 @@ object Version {
     const val kotlin = "1.6.10"
     const val hilt = "2.38.1"
     const val service = "4.3.10"
+    const val viewModel = "2.4.0-rc01"
 }
