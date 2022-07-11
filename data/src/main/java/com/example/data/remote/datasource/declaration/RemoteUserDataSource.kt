@@ -1,4 +1,4 @@
-package com.example.data.remote.datasource
+package com.example.data.remote.datasource.declaration
 
 interface RemoteUserDataSource {
 }
