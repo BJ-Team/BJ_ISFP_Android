@@ -19,6 +19,10 @@ object Dependency {
             const val composeNav = "androidx.navigation:navigation-compose:${Version.nav}"
             const val composeAniNav =
                 "com.google.accompanist:accompanist-navigation-animation:${Version.aniNav}"
+            const val accompanistPager =
+                "com.google.accompanist:accompanist-pager:${Version.accompanistPager}"
+            const val accompanistIconController =
+                "com.google.accompanist:accompanist-systemuicontroller:${Version.accompanistIconController}"
         }
 
         object ViewModel {
