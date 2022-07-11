@@ -54,6 +54,8 @@ dependencies {
     implementation(Dependency.UI.Compose.composeActivity)
     implementation(Dependency.UI.Compose.composeNav)
     implementation(Dependency.UI.Compose.composeAniNav)
+    implementation(Dependency.UI.Compose.accompanistIconController)
+    implementation(Dependency.UI.Compose.accompanistPager)
 
     implementation(Dependency.UI.ViewModel.viewModel)
 
