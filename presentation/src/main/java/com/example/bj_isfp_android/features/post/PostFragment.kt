@@ -1,4 +1,4 @@
-package com.example.bj_isfp_android.ui.post
+package com.example.bj_isfp_android.features.post
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
