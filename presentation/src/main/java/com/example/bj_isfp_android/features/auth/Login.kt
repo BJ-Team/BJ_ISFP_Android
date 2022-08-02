@@ -98,20 +98,18 @@ fun FindIdPw() {
             color = Color.DarkGray,
             fontSize = 11.sp
         )
-        Spacer(
-            modifier = Modifier
-                .padding()
-                .width(25.5.dp)
+        Spacers(
+            orientation = "width",
+            value = 15
         )
         Text(
             text = "|",
             color = Color.DarkGray,
             fontSize = 11.sp
         )
-        Spacer(
-            modifier = Modifier
-                .padding()
-                .width(25.5.dp)
+        Spacers(
+            orientation = "width",
+            value = 15
         )
         Text(
             text = "비밀번호 찾기",
