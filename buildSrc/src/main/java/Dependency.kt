@@ -23,6 +23,8 @@ object Dependency {
                 "com.google.accompanist:accompanist-pager:${Version.accompanistPager}"
             const val accompanistIconController =
                 "com.google.accompanist:accompanist-systemuicontroller:${Version.accompanistIconController}"
+            const val composeConstraint =
+                "androidx.constraintlayout:constraintlayout-compose:${Version.composeConstraint}"
         }
 
         object ViewModel {

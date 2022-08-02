@@ -15,6 +15,7 @@ object Version {
     const val hilt = "2.38.1"
     const val service = "4.3.10"
     const val viewModel = "2.4.0-rc01"
+    const val composeConstraint = "1.0.1"
     const val accompanistPager = "0.12.0"
     const val accompanistIconController = "0.17.0"
 }
