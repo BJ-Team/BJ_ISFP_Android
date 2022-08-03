@@ -8,4 +8,33 @@ object IsFpApiUrl {
         const val patchMyLocation = "user/Place"
         const val patchPassword = "user/password"
     }
+
+    object Auth {
+        const val refreshToken = "auth"
+    }
+
+    object Post {
+        const val post = "post"
+        const val editPost = "post/{post-id}"
+        const val wishPost = "post/wish/{post-id}"
+        const val reportPost = "post/report"
+    }
+
+    object MyPage {
+        const val wishPost = "mypage/wished"
+        const val sellList = "mypage/sold"
+        const val myPage = "mypage"
+        const val buyList = "mypage/bought"
+    }
+
+    object Profile {
+        const val wishPost = "profile/wished"
+        const val sellList = "profile/sold"
+        const val myPage = "profile"
+        const val buyList = "profile/bought"
+    }
+
+    object DailyLife {
+        const val dailyLifePost = "life"
+    }
 }
