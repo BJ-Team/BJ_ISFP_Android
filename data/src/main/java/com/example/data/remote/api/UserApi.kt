@@ -20,4 +20,7 @@ interface UserApi {
 
     @PATCH(IsFpApiUrl.User.patchMyLocation)
     suspend fun patchMyLocation()
+
+    @POST(IsFpApiUrl.Auth.refreshToken)
+    suspend fun refreshToken()
 }
