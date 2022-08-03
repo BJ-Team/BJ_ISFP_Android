@@ -32,6 +32,32 @@ object Dependency {
         }
     }
 
+    object Coroutine {
+        const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.coroutine}"
+        const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Version.coroutine}"
+    }
+
+    object DI {
+        const val hiltAndroid = "com.google.dagger:hilt-android:${Version.hilt}"
+        const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Version.hilt}"
+        const val inject = "javax.inject:javax.inject:1"
+        const val hiltCompose = "androidx.hilt:hilt-navigation-compose:${Version.hiltCompose}"
+    }
+
+    object Network {
+        const val retrofit = "com.squareup.retrofit2:retrofit:${Version.retrofit}"
+        const val gsonConverter = "com.squareup.retrofit2:converter-gson:${Version.retrofit}"
+        const val okhttp = "com.squareup.okhttp3:okhttp:${Version.okhttp}"
+        const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Version.okhttp}"
+    }
+
+    object LocalStorage {
+        const val room = "androidx.room:room-ktx:${Version.room}"
+        const val roomCompiler = "androidx.room:room-compiler:${Version.room}"
+        const val sharedPreference =
+            "androidx.preference:preference-ktx:${Version.sharedPreference}"
+    }
+
     object Lifecycle {
         const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.lifecycle}"
         const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Version.lifecycle}"
