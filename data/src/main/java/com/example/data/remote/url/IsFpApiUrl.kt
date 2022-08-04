@@ -36,5 +36,6 @@ object IsFpApiUrl {
 
     object DailyLife {
         const val dailyLifePost = "life"
+        const val editDailyLifePost = "life/{life-id}"
     }
 }
