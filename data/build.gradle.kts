@@ -1,6 +1,7 @@
 plugins {
     id ("com.android.library")
     id ("kotlin-android")
+    kotlin("kapt")
 }
 
 android {
@@ -34,6 +35,13 @@ dependencies {
     implementation(Dependency.Network.loggingInterceptor)
     implementation(Dependency.Network.retrofit)
     implementation(Dependency.Network.okhttp)
+
+    implementation(Dependency.Coroutine.core)
+
+    implementation(Dependency.DI.inject)
+
+    implementation(Dependency.DI.hiltAndroid)
+    kapt(Dependency.DI.hiltCompiler)
 
     implementation(Dependency.LocalStorage.room)
     implementation(Dependency.LocalStorage.roomCompiler)
