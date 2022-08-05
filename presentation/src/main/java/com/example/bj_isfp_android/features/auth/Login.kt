@@ -15,13 +15,18 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.bj_isfp_android.uill.Spacers
 import org.intellij.lang.annotations.JdkConstants
 
 @Composable
-fun LoginScreen() {
+fun Login(
+    navController: NavController,
+    scaffoldState: ScaffoldState
+) {
     val (id, setId) = rememberSaveable {
         mutableStateOf("")
     }
@@ -132,7 +137,7 @@ fun JoinEmail() {
         )
     ) {
         Text(
-            text = "이메일로 가입하기",
+            text = "회원가입",
             color = Color.DarkGray,
             fontSize = 14.sp
         )

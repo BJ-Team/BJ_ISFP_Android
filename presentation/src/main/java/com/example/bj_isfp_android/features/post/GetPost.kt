@@ -10,33 +10,17 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.bj_isfp_android.features.main.BottomNavigationItem
 
 @Composable
-fun PostFragment(navController: NavController) {
-    val (value, setValue) = remember {
-        mutableStateOf("")
-    }
-    Column(
+fun Post(
+    navController: NavController
+) {
+    Text(
+        text = "Post",
+        fontSize = 40.sp,
         modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(text = "first")
-        Spacer(modifier = Modifier.height(16.dp))
-        Button(onClick = {
-            navController.navigate("second")
-        }) {
-            Text("second")
-        }
-        Spacer(modifier = Modifier.height(16.dp))
-        TextField(value = value, onValueChange = setValue)
-        Button(onClick = {
-            if (value.isNotEmpty()) {
-                navController.navigate("third/$value")
-            }
-        }) {
-            Text("third")
-        }
-    }
+    )
 }
