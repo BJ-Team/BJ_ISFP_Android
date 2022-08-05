@@ -32,6 +32,11 @@ object Dependency {
         }
     }
 
+    object WorkManager {
+        const val ktx = "androidx.work:work-runtime-ktx:${Version.workManager}"
+        const val hiltExtension = "androidx.hilt:hilt-work:${Version.workManagerHiltExtension}"
+    }
+
     object Coroutine {
         const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.coroutine}"
         const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Version.coroutine}"

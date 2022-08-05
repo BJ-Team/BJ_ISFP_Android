@@ -24,4 +24,6 @@ object Version {
     const val room = "2.4.0"
     const val sharedPreference = "1.1.1"
     const val okhttp = "3.14.9"
+    const val workManager = "2.7.1"
+    const val workManagerHiltExtension = "1.0.0"
 }
