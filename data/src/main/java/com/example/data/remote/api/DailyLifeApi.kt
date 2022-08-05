@@ -11,13 +11,11 @@ interface DailyLifeApi {
 
     @GET(IsFpApiUrl.DailyLife.dailyLifePost)
     suspend fun fetchDailyLifePost(
-        @Header("Authorization") accessToken: String,
         @Body dailyLifeType: DailyLifeType
     ): FetchDailyLifePostResponse
 
     @POST(IsFpApiUrl.DailyLife.dailyLifePost)
     suspend fun createDailyLifePost(
-        @Header("Authorization") accessToken: String,
         @Body createDailyLifePostRequest: CreateDailyLifePostRequest
     )
 

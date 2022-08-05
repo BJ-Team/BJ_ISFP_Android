@@ -11,22 +11,14 @@ import retrofit2.http.Header
 interface MyPageApi {
 
     @GET(IsFpApiUrl.MyPage.myPage)
-    suspend fun fetchMyPage(
-        @Header("Authorization") accessToken: String
-    ): FetchMyPageResponse
+    suspend fun fetchMyPage(): FetchMyPageResponse
 
     @GET(IsFpApiUrl.MyPage.wishPost)
-    suspend fun fetchWishPost(
-        @Header("Authorization") accessToken: String
-    ): FetchMyWishListResponse
+    suspend fun fetchWishPost(): FetchMyWishListResponse
 
     @GET(IsFpApiUrl.MyPage.sellList)
-    suspend fun fetchSellList(
-        @Header("Authorization") accessToken: String
-    ): FetchMyBuyListResponse
+    suspend fun fetchSellList(): FetchMyBuyListResponse
 
     @GET(IsFpApiUrl.MyPage.buyList)
-    suspend fun fetchBuyList(
-        @Header("Authorization") accessToken: String
-    ): FetchMySellListResponse
+    suspend fun fetchBuyList(): FetchMySellListResponse
 }
