@@ -1,4 +1,4 @@
-package com.example.bj_isfp_android.di
+package com.example.bj_isfp_android.di.module
 
 import com.example.data.local.storage.declaration.AuthDataStorage
 import com.example.data.local.storage.implementation.AuthDataStorageImpl
