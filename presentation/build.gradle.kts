@@ -1,6 +1,10 @@
 plugins {
-    id ("com.android.application")
-    id ("kotlin-android")
+    id("com.android.application")
+    id("dagger.hilt.android.plugin")
+    id("com.google.gms.google-services")
+    kotlin("android")
+    kotlin("kapt")
+    id("kotlin-android")
 }
 
 android {
@@ -38,6 +42,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":domain"))
+    implementation(project(":data"))
 
     implementation(Dependency.coreKtx)
     implementation(Dependency.appcompat)
@@ -57,6 +63,25 @@ dependencies {
     implementation(Dependency.UI.Compose.accompanistIconController)
     implementation(Dependency.UI.Compose.accompanistPager)
     implementation(Dependency.UI.Compose.composeConstraint)
+
+    implementation(Dependency.DI.hiltAndroid)
+    implementation(Dependency.DI.hiltCompose)
+    kapt(Dependency.DI.hiltCompiler)
+
+    implementation(Dependency.DI.inject)
+
+    implementation(Dependency.Network.retrofit)
+    implementation(Dependency.Network.gsonConverter)
+    implementation(Dependency.Network.okhttp)
+    implementation(Dependency.Network.loggingInterceptor)
+
+    implementation(Dependency.LocalStorage.room)
+
+    implementation(Dependency.WorkManager.ktx)
+    implementation(Dependency.WorkManager.hiltExtension)
+
+    implementation(Dependency.Coroutine.core)
+    implementation(Dependency.Coroutine.android)
 
     implementation(Dependency.UI.ViewModel.viewModel)
 
