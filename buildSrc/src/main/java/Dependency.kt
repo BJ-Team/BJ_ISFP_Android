@@ -25,6 +25,8 @@ object Dependency {
                 "com.google.accompanist:accompanist-systemuicontroller:${Version.accompanistIconController}"
             const val composeConstraint =
                 "androidx.constraintlayout:constraintlayout-compose:${Version.composeConstraint}"
+            const val composeMaterialIcon =
+                "androidx.compose.material:material-icons-extended:${Version.jetpackCompose}"
         }
 
         object ViewModel {

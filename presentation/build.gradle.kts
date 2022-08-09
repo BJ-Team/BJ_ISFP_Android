@@ -63,6 +63,7 @@ dependencies {
     implementation(Dependency.UI.Compose.accompanistIconController)
     implementation(Dependency.UI.Compose.accompanistPager)
     implementation(Dependency.UI.Compose.composeConstraint)
+    implementation(Dependency.UI.Compose.composeMaterialIcon)
 
     implementation(Dependency.DI.hiltAndroid)
     implementation(Dependency.DI.hiltCompose)
@@ -88,4 +89,5 @@ dependencies {
     implementation(Dependency.Lifecycle.viewModel)
     implementation(Dependency.Lifecycle.liveData)
     implementation(Dependency.Lifecycle.runTime)
+
 }
