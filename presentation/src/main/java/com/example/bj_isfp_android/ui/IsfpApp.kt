@@ -5,8 +5,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.bj_isfp_android.features.auth.Login
-import com.example.bj_isfp_android.features.auth.Register
+import com.example.bj_isfp_android.features.auth.login.LoginScreen
+import com.example.bj_isfp_android.features.auth.RegisterScreen
 import com.example.bj_isfp_android.features.main.Main
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
@@ -23,13 +23,13 @@ fun IsFpApp() {
         composable(
             route = "login"
         ) {
-            Login(navController = navController, scaffoldState = scaffoldState)
+            LoginScreen(navController = navController, scaffoldState = scaffoldState)
         }
 
         composable(
             route = "register"
         ) {
-            Register(navController = navController, scaffoldState = scaffoldState)
+            RegisterScreen(navController = navController, scaffoldState = scaffoldState)
         }
     }
 }
