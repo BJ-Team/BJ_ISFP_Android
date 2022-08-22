@@ -1,75 +1,74 @@
-package com.example.bj_isfp_android.features.auth
+package com.example.bj_isfp_android.features.auth.login
 
-import android.text.Layout
-import android.widget.Space
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
-import androidx.compose.material.R
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.layoutId
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.example.bj_isfp_android.R
+import com.example.bj_isfp_android.features.auth.IdTextField
+import com.example.bj_isfp_android.features.auth.PasswordTextField
 import com.example.bj_isfp_android.uill.Spacers
-import org.intellij.lang.annotations.JdkConstants
 
 @Composable
-fun Login(
+fun LoginScreen(
     navController: NavController,
-    scaffoldState: ScaffoldState
+    scaffoldState: ScaffoldState,
+    loginViewModel: LoginViewModel = hiltViewModel()
 ) {
-    val (id, setId) = rememberSaveable {
-        mutableStateOf("")
-    }
-
-    val (password, setPassword) = rememberSaveable {
-        mutableStateOf("")
-    }
+    val state = loginViewModel.state.collectAsState().value
     Scaffold {
         Column(
             modifier = Modifier.padding(14.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Spacers(orientation = "height", value = -20)
+            Spacers(orientation = stringResource(id = R.string.height), value = -20)
             Title()
-            Spacers(orientation = "height", value = 50)
-            OutlinedTextField(
-                value = id,
-                onValueChange = setId,
-                label = { Text("ID") },
-                modifier = Modifier.fillMaxWidth(),
-                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
+            Spacers(orientation = stringResource(id = R.string.height), value = 50)
+            val idLabel = stringResource(id = R.string.id)
+            IdTextField(
+                text = state.email,
+                label = idLabel,
+                doOnValueChange = {
+                    loginViewModel.setEmail(it)
+                },
+                imeAction = ImeAction.Next
             )
-            OutlinedTextField(
-                value = password,
-                onValueChange = setPassword,
-                label = { Text("PW") },
-                modifier = Modifier.fillMaxWidth(),
-                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
+
+            val passwordLabel = stringResource(id = R.string.password)
+            PasswordTextField(
+                text = state.password,
+                label = passwordLabel,
+                doOnValueChange = {
+                    loginViewModel.setPassword(it)
+                },
+                imeAction = ImeAction.Done
             )
-            Spacers(orientation = "height", value = 40)
+            Spacers(orientation = stringResource(id = R.string.height), value = 40)
             LoginButton()
-            Spacers(orientation = "height", value = 25)
+            Spacers(orientation = stringResource(id = R.string.height), value = 25)
             FindIdPw()
-            Spacers(orientation = "height", value = 5)
+            Spacers(orientation = stringResource(id = R.string.height), value = 5)
             JoinEmail()
         }
     }
 }
 
+
+
 @Composable
 fun Title() {
     Text(
-        text = "로그인",
+        text = stringResource(id = R.string.login),
         color = Color.Black,
         fontSize = 20.sp,
         fontWeight = FontWeight.Bold
@@ -99,12 +98,12 @@ fun FindIdPw() {
         modifier = Modifier.fillMaxWidth()
     ) {
         Text(
-            text = "아이디 찾기",
+            text = stringResource(id = R.string.findId),
             color = Color.DarkGray,
             fontSize = 11.sp
         )
         Spacers(
-            orientation = "width",
+            orientation = stringResource(id = R.string.width),
             value = 15
         )
         Text(
@@ -113,11 +112,11 @@ fun FindIdPw() {
             fontSize = 11.sp
         )
         Spacers(
-            orientation = "width",
+            orientation = stringResource(id = R.string.width),
             value = 15
         )
         Text(
-            text = "비밀번호 찾기",
+            text = stringResource(id = R.string.findPw),
             color = Color.DarkGray,
             fontSize = 11.sp
         )
@@ -137,7 +136,7 @@ fun JoinEmail() {
         )
     ) {
         Text(
-            text = "회원가입",
+            text = stringResource(id = R.string.register),
             color = Color.DarkGray,
             fontSize = 14.sp
         )
