@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">BJ_ISFP_Android</string>
+    <string name="login">로그인</string>
+    <string name="register">회원가입</string>
+    <string name="width">width</string>
+    <string name="height">height</string>
+    <string name="findId">아이디 찾기</string>
+    <string name="findPw">비밀번호 찾기</string>
+    <string name="id">아이디</string>
+    <string name="password">비밀번호</string>
 </resources>
