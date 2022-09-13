@@ -17,8 +17,8 @@ interface MyPageApi {
     suspend fun fetchWishPost(): FetchMyWishListResponse
 
     @GET(IsFpApiUrl.MyPage.sellList)
-    suspend fun fetchSellList(): FetchMyBuyListResponse
+    suspend fun fetchSellList(): FetchMySellListResponse
 
     @GET(IsFpApiUrl.MyPage.buyList)
-    suspend fun fetchBuyList(): FetchMySellListResponse
+    suspend fun fetchBuyList(): FetchMyBuyListResponse
 }
