@@ -3,7 +3,7 @@ package com.example.data.remote.response.mypage
 import com.google.gson.annotations.SerializedName
 
 data class FetchMyBuyListResponse(
-    @SerializedName("buy_product_list") val buy_product_list: MyBuyProductList
+    @SerializedName("buy_product_list") val buy_product_list: List<MyBuyProductList>
 ) {
     data class MyBuyProductList(
         @SerializedName("post_id") val postId: Long,
