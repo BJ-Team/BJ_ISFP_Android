@@ -3,7 +3,7 @@ package com.example.data.remote.response.dailylife
 import com.google.gson.annotations.SerializedName
 
 data class FetchDailyLifePostResponse(
-    @SerializedName("life_list") val lifeList: LifeList
+    @SerializedName("life_list") val lifeList: List<LifeList>
 ) {
     data class LifeList(
         @SerializedName("title") val title: String,
