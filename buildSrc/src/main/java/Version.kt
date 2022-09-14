@@ -26,4 +26,6 @@ object Version {
     const val okhttp = "3.14.9"
     const val workManager = "2.7.1"
     const val workManagerHiltExtension = "1.0.0"
+    const val moshiKotlin = "1.8.0"
+    const val moshi = "1.12.0"
 }

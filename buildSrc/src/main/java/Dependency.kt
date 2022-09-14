@@ -39,6 +39,12 @@ object Dependency {
         const val hiltExtension = "androidx.hilt:hilt-work:${Version.workManagerHiltExtension}"
     }
 
+    object Moshi {
+        const val moshi = "com.squareup.moshi:moshi:${Version.moshi}"
+        const val moshiCompiler = "com.squareup.moshi:moshi-kotlin-codegen:${Version.moshi}"
+        const val moshiKotlin = "com.squareup.moshi:moshi-kotlin:${Version.moshiKotlin}"
+    }
+
     object Coroutine {
         const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.coroutine}"
         const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Version.coroutine}"
