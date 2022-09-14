@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class FetchPostListResponse(
     @SerializedName("now_my_location") val nowMyLocation: String,
-    @SerializedName("post_list") val postList: PostList
+    @SerializedName("post_list") val postList: List<PostList>
 ) {
     data class PostList(
         @SerializedName("title") val title: String,
