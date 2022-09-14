@@ -29,8 +29,13 @@ android {
 }
 
 dependencies {
-
     implementation(project(":domain"))
+
+
+    implementation(Dependency.Moshi.moshi)
+    kapt(Dependency.Moshi.moshiCompiler)
+
+
     implementation(Dependency.Network.gsonConverter)
     implementation(Dependency.Network.loggingInterceptor)
     implementation(Dependency.Network.retrofit)
@@ -42,6 +47,9 @@ dependencies {
 
     implementation(Dependency.DI.hiltAndroid)
     kapt(Dependency.DI.hiltCompiler)
+    
+    implementation(Dependency.WorkManager.ktx)
+    implementation(Dependency.WorkManager.hiltExtension)
 
     implementation(Dependency.LocalStorage.room)
     implementation(Dependency.LocalStorage.roomCompiler)
