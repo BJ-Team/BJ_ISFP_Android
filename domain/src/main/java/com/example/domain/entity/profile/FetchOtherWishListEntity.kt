@@ -1,7 +1,7 @@
 package com.example.domain.entity.profile
 
 data class FetchOtherWishListEntity(
-    val sellProductList: SellProductList
+    val sellProductList: List<SellProductList>
 ) {
     data class SellProductList(
         val postId: Long,
