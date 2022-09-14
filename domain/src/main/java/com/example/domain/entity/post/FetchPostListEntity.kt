@@ -2,7 +2,7 @@ package com.example.domain.entity.post
 
 data class FetchPostListEntity(
     val nowMyLocation: String,
-    val postList: PostList
+    val postList: List<PostList>
 ) {
     data class PostList(
         val title: String,
