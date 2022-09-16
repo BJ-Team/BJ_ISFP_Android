@@ -6,7 +6,7 @@ import com.example.domain.param.dailylife.CreateDailyLifeParam
 import com.example.domain.param.dailylife.PatchDailyLifeParam
 
 interface DailyLifeRepository {
-    
+
     suspend fun fetchDailyLifePost(dailyLifeType: DailyLifeType): FetchDailyLifePostEntity
 
     suspend fun createDailyLifePost(createDailyLifeParam: CreateDailyLifeParam)
