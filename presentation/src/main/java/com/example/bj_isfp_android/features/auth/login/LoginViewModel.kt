@@ -1,7 +1,7 @@
 package com.example.bj_isfp_android.features.auth.login
 
 import com.example.bj_isfp_android.base.BaseViewModel
-import com.example.domain.param.LoginParam
+import com.example.domain.param.user.LoginParam
 import com.example.domain.usecase.auth.LoginUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
