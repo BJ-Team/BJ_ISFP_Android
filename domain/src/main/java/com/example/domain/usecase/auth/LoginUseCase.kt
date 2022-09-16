@@ -1,6 +1,6 @@
 package com.example.domain.usecase.auth
 
-import com.example.domain.param.LoginParam
+import com.example.domain.param.user.LoginParam
 import com.example.domain.respository.UserRepository
 import com.example.domain.usecase.UseCase
 import javax.inject.Inject

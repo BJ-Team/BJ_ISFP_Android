@@ -2,7 +2,7 @@ package com.example.data.respositoryimpl
 
 import com.example.data.local.datasource.declaration.LocalUserDataSource
 import com.example.data.remote.datasource.declaration.RemoteUserDataSource
-import com.example.domain.param.LoginParam
+import com.example.domain.param.user.LoginParam
 import com.example.domain.respository.UserRepository
 import javax.inject.Inject
 
