@@ -4,9 +4,12 @@ import com.example.data.remote.api.DailyLifeApi
 import com.example.data.remote.datasource.declaration.RemoteDailyLifeDataSource
 import com.example.data.remote.request.dailylife.CreateDailyLifePostRequest
 import com.example.data.remote.request.dailylife.PatchDailyLifePostRequest
+import com.example.data.remote.request.post.CreatePostRequest
 import com.example.data.remote.response.dailylife.FetchDailyLifePostResponse
 import com.example.data.util.HttpHandler
+import com.example.domain.entity.dailylife.FetchDailyLifePostEntity
 import com.example.domain.enums.DailyLifeType
+import com.example.domain.param.dailylife.CreateDailyLifeParam
 import javax.inject.Inject
 
 class RemoteDailyLifeDataSourceImpl @Inject constructor(
@@ -15,7 +18,7 @@ class RemoteDailyLifeDataSourceImpl @Inject constructor(
 
     override suspend fun fetchDailyLifePost(
         dailyLifeType: DailyLifeType
-    ) = HttpHandler<FetchDailyLifePostResponse>()
+    ): FetchDailyLifePostResponse = HttpHandler<FetchDailyLifePostResponse>()
         .httpRequest { dailyLifeApi.fetchDailyLifePost(dailyLifeType) }
         .sendRequest()
 

@@ -9,6 +9,6 @@ class LoginUseCase @Inject constructor(
     private val userRepository: UserRepository
 ): UseCase<LoginParam, Unit>() {
     override suspend fun execute(data: LoginParam) {
-        userRepository.login(data)
+        userRepository.signIn(data)
     }
 }
