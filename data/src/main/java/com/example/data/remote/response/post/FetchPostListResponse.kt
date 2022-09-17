@@ -1,5 +1,6 @@
 package com.example.data.remote.response.post
 
+import com.example.domain.entity.post.FetchPostListEntity
 import com.google.gson.annotations.SerializedName
 
 data class FetchPostListResponse(
@@ -15,3 +16,19 @@ data class FetchPostListResponse(
         @SerializedName("post_id") val postId: Long
     )
 }
+
+fun FetchPostListResponse.PostList.toEntity() =
+    FetchPostListEntity.PostList(
+        title = title,
+        location = location,
+        createTime = createTime,
+        price = price,
+        postImage = postImage,
+        postId = postId
+    )
+
+fun FetchPostListResponse.toEntity() =
+    FetchPostListEntity(
+        nowMyLocation = nowMyLocation,
+        postList = postList.map { it.toEntity() }
+    )
