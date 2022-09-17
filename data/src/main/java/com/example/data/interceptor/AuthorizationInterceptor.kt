@@ -9,8 +9,9 @@ import com.google.gson.annotations.SerializedName
 import okhttp3.*
 import java.time.LocalDateTime
 import java.time.ZoneId
+import javax.inject.Inject
 
-class AuthorizationInterceptor(
+class AuthorizationInterceptor @Inject constructor(
     private val authDataStorage: AuthDataStorage
 ) : Interceptor {
 

@@ -1,9 +1,6 @@
 package com.example.bj_isfp_android.di.module
 
-import com.example.data.local.datasource.declaration.LocalDailyLifeDataSource
-import com.example.data.local.datasource.declaration.LocalMyPageDataSource
-import com.example.data.local.datasource.declaration.LocalProfileDataSource
-import com.example.data.local.datasource.declaration.LocalUserDataSource
+import com.example.data.local.datasource.declaration.*
 import com.example.data.local.datasource.implementation.*
 import dagger.Binds
 import dagger.Module
@@ -22,7 +19,7 @@ abstract class LocalDataSourceModule {
     @Binds
     abstract fun provideLocalPostDataSource(
         localPostDataSourceImpl: LocalPostDataSourceImpl
-    ): LocalUserDataSource
+    ): LocalPostDataSource
 
     @Binds
     abstract fun provideLocalMyPageDataSource(
