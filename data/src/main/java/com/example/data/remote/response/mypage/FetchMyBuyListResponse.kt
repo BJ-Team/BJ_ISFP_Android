@@ -1,5 +1,6 @@
 package com.example.data.remote.response.mypage
 
+import com.example.domain.entity.mypage.FetchMyBuyListEntity
 import com.google.gson.annotations.SerializedName
 
 data class FetchMyBuyListResponse(
@@ -12,3 +13,16 @@ data class FetchMyBuyListResponse(
         @SerializedName("post_image") val postImage: String
     )
 }
+
+fun FetchMyBuyListResponse.MyBuyProductList.toEntity() =
+    FetchMyBuyListEntity.MyBuyProductList(
+        postId = postId,
+        title = title,
+        location = location,
+        postImage = postImage
+    )
+
+fun FetchMyBuyListResponse.toEntity() =
+    FetchMyBuyListEntity(
+        buy_product_list = buy_product_list.map { it.toEntity() }
+    )
