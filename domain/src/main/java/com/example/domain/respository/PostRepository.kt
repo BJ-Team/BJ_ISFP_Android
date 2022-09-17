@@ -4,10 +4,11 @@ import com.example.domain.entity.post.FetchPostListEntity
 import com.example.domain.param.post.CreatePostParam
 import com.example.domain.param.post.PatchPostParam
 import com.example.domain.param.post.PostReportParam
+import kotlinx.coroutines.flow.Flow
 
 interface PostRepository {
 
-    suspend fun fetchPost(): FetchPostListEntity
+    suspend fun fetchPost(): Flow<FetchPostListEntity>
 
     suspend fun createPost(createPostParam: CreatePostParam)
 
