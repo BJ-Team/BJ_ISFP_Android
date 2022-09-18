@@ -36,10 +36,10 @@ fun LoginScreen(
             Spacers(orientation = stringResource(id = R.string.height), value = 50)
             val idLabel = stringResource(id = R.string.id)
             IdTextField(
-                text = state.email,
+                text = state.id,
                 label = idLabel,
                 doOnValueChange = {
-                    loginViewModel.setEmail(it)
+                    loginViewModel.setId(it)
                 },
                 imeAction = ImeAction.Next
             )
