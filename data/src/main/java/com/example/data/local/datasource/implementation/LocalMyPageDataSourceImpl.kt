@@ -2,7 +2,6 @@ package com.example.data.local.datasource.implementation
 
 import com.example.data.local.dao.MyPageDao
 import com.example.data.local.datasource.declaration.LocalMyPageDataSource
-import com.example.data.local.storage.declaration.MyPageStorage
 import com.example.domain.entity.mypage.FetchMyBuyListEntity
 import com.example.domain.entity.mypage.FetchMyPageEntity
 import com.example.domain.entity.mypage.FetchMySellListEntity

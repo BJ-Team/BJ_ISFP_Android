@@ -2,7 +2,6 @@ package com.example.data.local.datasource.implementation
 
 import com.example.data.local.dao.ProfileDao
 import com.example.data.local.datasource.declaration.LocalProfileDataSource
-import com.example.data.local.storage.declaration.ProfileStorage
 import com.example.domain.entity.profile.FetchOtherBuyListEntity
 import com.example.domain.entity.profile.FetchOtherProfileEntity
 import com.example.domain.entity.profile.FetchOtherSellListEntity
