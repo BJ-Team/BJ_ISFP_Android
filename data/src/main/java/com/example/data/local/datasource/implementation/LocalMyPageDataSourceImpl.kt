@@ -9,8 +9,7 @@ import com.example.domain.entity.mypage.FetchMyWishListEntity
 import javax.inject.Inject
 
 class LocalMyPageDataSourceImpl @Inject constructor(
-    val myPageDao: MyPageDao,
-    val myPageStorage: MyPageStorage
+    val myPageDao: MyPageDao
 ): LocalMyPageDataSource {
 
     override suspend fun fetchMyPage(): FetchMyPageEntity {
