@@ -9,8 +9,7 @@ import com.example.domain.entity.dailylife.FetchDailyLifePostEntity
 import javax.inject.Inject
 
 class LocalDailyLifeDataSourceImpl @Inject constructor(
-    private val dailyLifeDao: DailyLifeDao,
-    val authDataStorage: AuthDataStorage
+    private val dailyLifeDao: DailyLifeDao
 ): LocalDailyLifeDataSource {
     override suspend fun fetchDailyLifeList(): FetchDailyLifePostEntity =
         dailyLifeDao.fetchDailyLifeList().toEntity()

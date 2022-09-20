@@ -8,8 +8,7 @@ import com.example.domain.entity.profile.FetchOtherSellListEntity
 import javax.inject.Inject
 
 class LocalProfileDataSourceImpl @Inject constructor(
-    val profileDao: ProfileDao,
-    val profileStorage: ProfileStorage
+    val profileDao: ProfileDao
 ): LocalProfileDataSource {
     override suspend fun fetchProfile(): FetchOtherProfileEntity {
         TODO("Not yet implemented")

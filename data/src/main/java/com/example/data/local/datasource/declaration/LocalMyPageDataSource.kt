@@ -9,7 +9,7 @@ interface LocalMyPageDataSource {
 
     suspend fun fetchMyPage(): FetchMyPageEntity
 
-    suspend fun saveMyPage(fetchMyPageEntity: FetchMyPageEntity)
+    suspend fun saveMyPage(list: FetchMyPageEntity)
 
     suspend fun fetchMyWishList(): FetchMyWishListEntity
 

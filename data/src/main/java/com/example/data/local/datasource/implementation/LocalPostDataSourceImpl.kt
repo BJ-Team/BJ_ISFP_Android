@@ -6,8 +6,7 @@ import com.example.domain.entity.post.FetchPostListEntity
 import javax.inject.Inject
 
 class LocalPostDataSourceImpl @Inject constructor(
-    val postDao: PostDao,
-    val postStorage: PostStorage
+    val postDao: PostDao
 ): LocalPostDataSource {
     override suspend fun fetchPost(): FetchPostListEntity {
         TODO("Not yet implemented")
