@@ -10,12 +10,6 @@ import com.example.data.local.roomentity.mypage.FetchMyWishListRoomEntity
 
 interface MyPageDao {
 
-    @Query("SELECT * FROM myPage")
-    suspend fun fetchMyPage(): FetchMyPageRoomEntity
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun saveMyPage(fetchMyPageRoomEntity: FetchMyPageRoomEntity)
-
     @Query("SELECT * FROM wish")
     suspend fun fetchMyWishList(): FetchMyWishListRoomEntity
 
