@@ -4,7 +4,6 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.data.local.roomentity.mypage.FetchMyBuyListRoomEntity
-import com.example.data.local.roomentity.mypage.FetchMyPageRoomEntity
 import com.example.data.local.roomentity.mypage.FetchMySellListRoomEntity
 import com.example.data.local.roomentity.mypage.FetchMyWishListRoomEntity
 
