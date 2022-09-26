@@ -4,7 +4,7 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverter
 import androidx.room.TypeConverters
-import com.example.data.local.converter.DailyLifeListTypeConverter
+import com.example.data.local.converter.*
 import com.example.data.local.dao.DailyLifeDao
 import com.example.data.local.dao.MyPageDao
 import com.example.data.local.dao.PostDao
@@ -33,7 +33,14 @@ import com.example.data.local.roomentity.profile.FetchOtherWishListRoomEntity
 
 @TypeConverters(
     value = [
-        DailyLifeListTypeConverter::class
+        DailyLifeListTypeConverter::class,
+        MyBuyListTypeConverter::class,
+        MySellListTypeConverter::class,
+        MyWishListTypeConverter::class,
+        PostTypeConverter::class,
+        OtherBuyListTypeConverter::class,
+        OtherSellListTypeConverter::class,
+        OtherWishListTypeConverter::class
     ]
 )
 
