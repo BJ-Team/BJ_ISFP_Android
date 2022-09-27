@@ -31,10 +31,9 @@ class PostRepositoryImpl @Inject constructor(
     ) = remotePostDataSource.createPost(createPostParam.toRequest())
 
     override suspend fun patchPost(
-        postId: Long,
         patchPostParam: PatchPostParam
     ) = remotePostDataSource.patchMyPost(
-        postId,
+        patchPostParam.postId,
         patchPostParam.toRequest()
     )
 
