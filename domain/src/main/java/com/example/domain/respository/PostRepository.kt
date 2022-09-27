@@ -12,7 +12,7 @@ interface PostRepository {
 
     suspend fun createPost(createPostParam: CreatePostParam)
 
-    suspend fun patchPost(postId: Long, patchPostParam: PatchPostParam)
+    suspend fun patchPost(patchPostParam: PatchPostParam)
 
     suspend fun deletePost(postId: Long)
 
