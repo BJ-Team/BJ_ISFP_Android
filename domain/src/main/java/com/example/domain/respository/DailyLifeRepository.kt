@@ -12,7 +12,7 @@ interface DailyLifeRepository {
 
     suspend fun createDailyLifePost(createDailyLifeParam: CreateDailyLifeParam)
 
-    suspend fun patchDailyLifePost(lifeId: Long, patchDailyLifeParam: PatchDailyLifeParam)
+    suspend fun patchDailyLifePost(patchDailyLifeParam: PatchDailyLifeParam)
 
     suspend fun deleteDailyLifePost(lifeId: Long)
 }

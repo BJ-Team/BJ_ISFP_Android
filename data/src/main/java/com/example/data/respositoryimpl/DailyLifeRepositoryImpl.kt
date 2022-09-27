@@ -33,9 +33,11 @@ class DailyLifeRepositoryImpl @Inject constructor(
     ) = remoteDailyLifeDataSource.createDailyLifePost(createDailyLifeParam.toRequest())
 
     override suspend fun patchDailyLifePost(
-        lifeId: Long,
         patchDailyLifeParam: PatchDailyLifeParam
-    ) = remoteDailyLifeDataSource.patchDailyLifePost(lifeId, patchDailyLifeParam.toRequest())
+    ) = remoteDailyLifeDataSource.patchDailyLifePost(
+        patchDailyLifeParam.lifeId,
+        patchDailyLifeParam.toRequest()
+    )
 
     override suspend fun deleteDailyLifePost(
         lifeId: Long
