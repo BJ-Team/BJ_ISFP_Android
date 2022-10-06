@@ -31,9 +31,9 @@ fun LoginScreen(
             modifier = Modifier.padding(14.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Spacers(orientation = stringResource(id = R.string.height), value = -20)
+            Spacers(orientation = stringResource(id = R.string.height), value = 20)
             Title()
-            Spacers(orientation = stringResource(id = R.string.height), value = 50)
+            Spacers(orientation = stringResource(id = R.string.height), value = 60)
             val idLabel = stringResource(id = R.string.id)
             IdTextField(
                 text = state.id,
@@ -43,7 +43,7 @@ fun LoginScreen(
                 },
                 imeAction = ImeAction.Next
             )
-
+            Spacers(orientation = stringResource(id = R.string.height), value = 10)
             val passwordLabel = stringResource(id = R.string.password)
             PasswordTextField(
                 text = state.password,
@@ -53,16 +53,12 @@ fun LoginScreen(
                 },
                 imeAction = ImeAction.Done
             )
-            Spacers(orientation = stringResource(id = R.string.height), value = 40)
             LoginButton()
-            Spacers(orientation = stringResource(id = R.string.height), value = 25)
             FindIdPw()
-            Spacers(orientation = stringResource(id = R.string.height), value = 5)
-            JoinEmail()
+            JoinEmail(navController)
         }
     }
 }
-
 
 
 @Composable
@@ -81,7 +77,7 @@ fun LoginButton() {
         onClick = {},
         modifier = Modifier
             .fillMaxWidth()
-            .height(40.dp),
+            .padding(40.dp),
         colors = ButtonDefaults.buttonColors(
             backgroundColor = Color.LightGray,
             contentColor = Color.Black
@@ -124,21 +120,34 @@ fun FindIdPw() {
 }
 
 @Composable
-fun JoinEmail() {
-    Button(
-        onClick = { /*TODO*/ },
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(40.dp),
-        colors = ButtonDefaults.buttonColors(
-            backgroundColor = Color.LightGray,
-            contentColor = Color.Black
-        )
+fun JoinEmail(
+    navController: NavController,
+) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(
-            text = stringResource(id = R.string.register),
-            color = Color.DarkGray,
-            fontSize = 14.sp
-        )
+        Box (
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxHeight(),
+            contentAlignment = Alignment.BottomCenter
+        ) {
+            Button(
+                onClick = { navController.navigate("register") },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(40.dp),
+                colors = ButtonDefaults.buttonColors(
+                    backgroundColor = Color.LightGray,
+                    contentColor = Color.Black
+                )
+            ) {
+                Text(
+                    text = stringResource(id = R.string.register),
+                    color = Color.DarkGray,
+                    fontSize = 14.sp
+                )
+            }
+        }
     }
 }
