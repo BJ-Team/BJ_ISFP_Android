@@ -83,6 +83,7 @@ dependencies {
     implementation(Dependency.Coroutine.android)
 
     implementation(Dependency.UI.ViewModel.viewModel)
+    implementation(Dependency.UI.ViewModel.liveData)
 
     implementation(Dependency.Lifecycle.viewModel)
     implementation(Dependency.Lifecycle.liveData)

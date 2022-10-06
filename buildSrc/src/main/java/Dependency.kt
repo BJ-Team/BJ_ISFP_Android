@@ -31,6 +31,7 @@ object Dependency {
 
         object ViewModel {
             const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:${Version.viewModel}"
+            const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Version.lifecycle}"
         }
     }
 
