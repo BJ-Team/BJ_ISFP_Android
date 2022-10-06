@@ -6,7 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.bj_isfp_android.features.auth.login.LoginScreen
-import com.example.bj_isfp_android.features.auth.RegisterScreen
+import com.example.bj_isfp_android.features.auth.register.RegisterScreen
 import com.example.bj_isfp_android.features.main.Main
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
@@ -16,7 +16,7 @@ fun IsFpApp() {
     val scaffoldState = rememberScaffoldState()
     val systemUiController = rememberSystemUiController()
 
-    NavHost(navController = navController, startDestination = "main") {
+    NavHost(navController = navController, startDestination = "login") {
 
         composable("main") { Main(navController) }
 
