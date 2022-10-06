@@ -33,6 +33,7 @@ class LoginViewModel @Inject constructor(
             is LoginEvent.InputPassword -> {
                 setState(oldState.copy(password = event.password))
             }
+            else -> {}
         }
     }
 }
