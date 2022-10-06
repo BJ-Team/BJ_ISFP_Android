@@ -42,8 +42,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":domain"))
     implementation(project(":data"))
+    implementation(project(":domain"))
 
     implementation(Dependency.coreKtx)
     implementation(Dependency.appcompat)
@@ -75,8 +75,6 @@ dependencies {
     implementation(Dependency.Network.gsonConverter)
     implementation(Dependency.Network.okhttp)
     implementation(Dependency.Network.loggingInterceptor)
-
-    implementation(Dependency.LocalStorage.room)
 
     implementation(Dependency.WorkManager.ktx)
     implementation(Dependency.WorkManager.hiltExtension)

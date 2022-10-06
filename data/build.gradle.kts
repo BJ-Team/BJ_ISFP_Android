@@ -33,6 +33,7 @@ dependencies {
 
 
     implementation(Dependency.Moshi.moshi)
+    implementation("androidx.room:room-common:2.4.3")
     kapt(Dependency.Moshi.moshiCompiler)
 
 
@@ -52,6 +53,6 @@ dependencies {
     implementation(Dependency.WorkManager.hiltExtension)
 
     implementation(Dependency.LocalStorage.room)
-    implementation(Dependency.LocalStorage.roomCompiler)
+    annotationProcessor(Dependency.LocalStorage.roomCompiler)
     implementation(Dependency.LocalStorage.sharedPreference)
 }
