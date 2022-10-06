@@ -20,8 +20,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
-    private val loginUseCase: LoginUseCase,
-    private val nameCheckOverLapUseCase: NameCheckOverLapUseCase
+    private val loginUseCase: LoginUseCase
 ): BaseViewModel<LoginState, LoginEvent>() {
 
     private val _eventFlow = MutableEventFlow<LoginEvent>()
