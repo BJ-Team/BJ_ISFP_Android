@@ -11,9 +11,10 @@ sealed class RegisterEvent: MviEvent {
     data class InputPlace(val place: String): RegisterEvent()
     data class InputSex(val sex: SexType): RegisterEvent()
     object PossibleName: RegisterEvent()
-    object Success: RegisterEvent()
+    object SuccessNameCheck: RegisterEvent()
+    object SuccessRegister: RegisterEvent()
     object BadRequestException: RegisterEvent()
-    object NotFountException: RegisterEvent()
+    object NotFoundException: RegisterEvent()
     object ConflictException: RegisterEvent()
-    object KnownException: RegisterEvent()
+    object UnKnownException: RegisterEvent()
 }
