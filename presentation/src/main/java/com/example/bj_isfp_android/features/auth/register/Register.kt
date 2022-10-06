@@ -17,8 +17,11 @@ import com.example.bj_isfp_android.features.auth.PasswordTextField
 import com.example.bj_isfp_android.uill.Spacers
 import com.example.bj_isfp_android.features.auth.IdTextField
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.bj_isfp_android.uill.EventFlow
 import com.example.bj_isfp_android.uill.SexSpinner
+import com.example.bj_isfp_android.uill.observeWithLifecycle
 import com.example.domain.enums.SexType
+import kotlinx.coroutines.launch
 
 @Composable
 fun RegisterScreen(
@@ -33,26 +36,103 @@ fun RegisterScreen(
     ) {
         MainTitle()
         ScanIdTextField(
-            registerViewModel = registerViewModel,
+            registerViewModel,
             state = state
         )
         ScanPassWordTextField(
-            registerViewModel = registerViewModel,
+            registerViewModel,
             state = state
         )
         ScanNameTextField(
-            registerViewModel = registerViewModel,
+            registerViewModel,
             state = state
         )
         ScanPlaceNameTextField(
-            registerViewModel = registerViewModel,
+            registerViewModel,
             state = state
         )
         ScanSexSpinner(
-            registerViewModel = registerViewModel
+            registerViewModel
         )
-        EndRegister(registerViewModel = registerViewModel)
+        EndRegister(registerViewModel)
     }
+
+    handleViewEffect(scaffoldState, navController,registerViewModel.registerEvent)
+}
+
+@Composable
+private fun handleViewEffect(
+    scaffoldState: ScaffoldState,
+    navController: NavController,
+    event: EventFlow<RegisterEvent>
+) {
+
+    val scope = rememberCoroutineScope()
+    val possibleName = "이미 존재하는 이름입니다."
+    val successNameCheck = "사용가능한 이름입니다."
+    val successComment = "회원가입에 성공하셨습니다."
+    val notFoundException = "잘못된 접근입니다."
+    val conflictException = "이미 사용중인 아이디입니다."
+    val unKnownException = "알 수 없는 오류가 발생하였습니다."
+
+    event.observeWithLifecycle(action = {
+        when (it) {
+            is RegisterEvent.SuccessRegister -> {
+                scope.launch {
+                    scaffoldState.snackbarHostState.showSnackbar(
+                        successComment,
+                        duration = SnackbarDuration.Short
+                    )
+                    navController.navigate("login")
+                }
+            }
+
+            is RegisterEvent.NotFoundException -> {
+                scope.launch {
+                    scaffoldState.snackbarHostState.showSnackbar(
+                        notFoundException,
+                        duration = SnackbarDuration.Short
+                    )
+                }
+            }
+
+            is RegisterEvent.ConflictException -> {
+                scope.launch {
+                    scaffoldState.snackbarHostState.showSnackbar(
+                        conflictException,
+                        duration = SnackbarDuration.Short
+                    )
+                }
+            }
+
+            is RegisterEvent.UnKnownException -> {
+                scope.launch {
+                    scaffoldState.snackbarHostState.showSnackbar(
+                        unKnownException,
+                        duration = SnackbarDuration.Short
+                    )
+                }
+            }
+
+            is RegisterEvent.SuccessNameCheck -> {
+                scope.launch {
+                    scaffoldState.snackbarHostState.showSnackbar(
+                        successNameCheck,
+                        duration = SnackbarDuration.Short
+                    )
+                }
+            }
+
+            is RegisterEvent.PossibleName -> {
+                scope.launch {
+                    scaffoldState.snackbarHostState.showSnackbar(
+                        possibleName,
+                        duration = SnackbarDuration.Short
+                    )
+                }
+            }
+        }
+    })
 }
 
 @Composable
@@ -184,7 +264,7 @@ fun ScanSexSpinner(
     }
 
     if (a) {
-        SexSpinner(onClick = { sexType: SexType -> b = sexType.name } )
+        SexSpinner(onClick = { sexType: SexType -> b = sexType.name })
     }
 }
 
@@ -195,7 +275,7 @@ fun EndRegister(
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Box (
+        Box(
             modifier = Modifier
                 .weight(1f)
                 .fillMaxHeight(),
