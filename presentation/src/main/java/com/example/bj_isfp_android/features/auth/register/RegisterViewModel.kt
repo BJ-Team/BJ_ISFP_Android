@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.bj_isfp_android.base.BaseViewModel
 import com.example.bj_isfp_android.features.auth.login.LoginEvent
+import com.example.bj_isfp_android.uill.EventFlow
 import com.example.bj_isfp_android.uill.MutableEventFlow
 import com.example.bj_isfp_android.uill.asEventFlow
 import com.example.domain.enums.SexType
@@ -29,7 +30,10 @@ class RegisterViewModel @Inject constructor(
     private val _eventFlow = MutableEventFlow<RegisterEvent>()
     val eventFlow = _eventFlow.asEventFlow()
 
-    val parameter =
+    private val _registerEvent = MutableEventFlow<RegisterEvent>()
+    val registerEvent: EventFlow<RegisterEvent> = _registerEvent.asEventFlow()
+
+    private val parameter =
         RegisterParam(
             id = state.value.id,
             password = state.value.password,
@@ -95,13 +99,13 @@ class RegisterViewModel @Inject constructor(
                     nameCheckOverLapUseCase.execute(name)
                 }
             }.onSuccess {
-                event(RegisterEvent.PossibleName)
+                event(RegisterEvent.SuccessNameCheck)
             }.onFailure {
                 when(it) {
                     is BadRequestException -> RegisterEvent.BadRequestException
-                    is NotFoundException -> RegisterEvent.NotFountException
+                    is NotFoundException -> RegisterEvent.NotFoundException
                     is ConflictException -> RegisterEvent.ConflictException
-                    else -> RegisterEvent.KnownException
+                    else -> RegisterEvent.UnKnownException
                 }
             }
         }
@@ -114,13 +118,13 @@ class RegisterViewModel @Inject constructor(
                     registerUseCase.execute(parameter)
                 }
             }.onSuccess {
-                event(RegisterEvent.Success)
+                event(RegisterEvent.SuccessRegister)
             }.onFailure {
                 when(it) {
                     is BadRequestException -> RegisterEvent.BadRequestException
-                    is NotFoundException -> RegisterEvent.NotFountException
+                    is NotFoundException -> RegisterEvent.NotFoundException
                     is ConflictException -> RegisterEvent.ConflictException
-                    else -> RegisterEvent.KnownException
+                    else -> RegisterEvent.UnKnownException
                 }
             }
         }
