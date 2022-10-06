@@ -1,6 +1,9 @@
 package com.example.bj_isfp_android.features.auth.register
 
+import androidx.lifecycle.Lifecycle.Event
 import com.example.bj_isfp_android.base.BaseViewModel
+import com.example.bj_isfp_android.uill.MutableEventFlow
+import com.example.bj_isfp_android.uill.asEventFlow
 import com.example.domain.enums.SexType
 import com.example.domain.param.user.RegisterParam
 import com.example.domain.usecase.auth.RegisterUseCase
@@ -11,6 +14,9 @@ import javax.inject.Inject
 class RegisterViewModel @Inject constructor(
     val registerUseCase: RegisterUseCase
 ): BaseViewModel<RegisterState, RegisterEvent>() {
+
+    private val _eventFlow = MutableEventFlow<Event>()
+    val eventFlow = _eventFlow.asEventFlow()
 
     val parameter =
         RegisterParam(
