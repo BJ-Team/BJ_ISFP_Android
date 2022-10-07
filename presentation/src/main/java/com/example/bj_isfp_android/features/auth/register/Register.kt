@@ -57,7 +57,7 @@ fun RegisterScreen(
         EndRegister(registerViewModel)
     }
 
-    handleViewEffect(scaffoldState, navController,registerViewModel.registerEvent)
+    handleViewEffect(scaffoldState, navController,registerViewModel.eventFlow)
 }
 
 @Composable
@@ -131,6 +131,8 @@ private fun handleViewEffect(
                     )
                 }
             }
+
+            else -> {}
         }
     })
 }

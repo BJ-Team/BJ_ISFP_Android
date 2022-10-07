@@ -25,13 +25,10 @@ import javax.inject.Inject
 class RegisterViewModel @Inject constructor(
     private val registerUseCase: RegisterUseCase,
     private val nameCheckOverLapUseCase: NameCheckOverLapUseCase
-): BaseViewModel<RegisterState, RegisterEvent>() {
+) : BaseViewModel<RegisterState, RegisterEvent>() {
 
     private val _eventFlow = MutableEventFlow<RegisterEvent>()
     val eventFlow = _eventFlow.asEventFlow()
-
-    private val _registerEvent = MutableEventFlow<RegisterEvent>()
-    val registerEvent: EventFlow<RegisterEvent> = _registerEvent.asEventFlow()
 
     private val parameter =
         RegisterParam(
@@ -68,7 +65,7 @@ class RegisterViewModel @Inject constructor(
         get() = RegisterState.initial()
 
     override fun reduceEvent(oldState: RegisterState, event: RegisterEvent) {
-        when(event) {
+        when (event) {
             is RegisterEvent.InputId -> {
                 setState(oldState.copy(id = event.id))
             }
@@ -101,7 +98,7 @@ class RegisterViewModel @Inject constructor(
             }.onSuccess {
                 event(RegisterEvent.SuccessNameCheck)
             }.onFailure {
-                when(it) {
+                when (it) {
                     is BadRequestException -> RegisterEvent.BadRequestException
                     is NotFoundException -> RegisterEvent.NotFoundException
                     is ConflictException -> RegisterEvent.ConflictException
@@ -120,7 +117,7 @@ class RegisterViewModel @Inject constructor(
             }.onSuccess {
                 event(RegisterEvent.SuccessRegister)
             }.onFailure {
-                when(it) {
+                when (it) {
                     is BadRequestException -> RegisterEvent.BadRequestException
                     is NotFoundException -> RegisterEvent.NotFoundException
                     is ConflictException -> RegisterEvent.ConflictException
